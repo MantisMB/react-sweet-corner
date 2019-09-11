@@ -11,6 +11,16 @@ body {
         display: flex;
         height: 100vh;
 
+        .center {
+            text-align: center;
+            }
+        
+        .container {
+            margin: 0 auto;
+            width: 1000px;
+
+            }
+
         .welcome {
             color: #FFF;
             font-family: rustic;
