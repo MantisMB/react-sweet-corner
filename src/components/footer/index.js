@@ -3,8 +3,10 @@ import './footer.scss';
 
 export default props => {
     return (
-        <div>
-            <h1 className="center">This is the Footer</h1>
-        </div>
+        <footer>
+        <div className="dots"></div> 
+        <div className="date">&copy; 2019 all rights reserved</div>
+        <div><i className="fa fa-phone"></i>800-264-2099</div> 
+        </footer>
     );
 }
