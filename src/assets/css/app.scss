@@ -7,28 +7,46 @@
 
 @import url("https://fonts.googleapis.com/css?family=Qwigley");
 
-html {
-    font-family: sans-serif;
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
 header  {
     font-family: Qwigley, cursive, sans-serif;
-    text-align: center;
     font-size: 4vmin;
     border-bottom: 24px solid #754b23;
     position: inline;
+    h2 {
+        text-align: center;
+    }
     .top-image {
         height: 100px;
         background-image: url("../images/header.png");
         background-repeat: no-repeat;  
     }
-    .main-nav {
-        font-family: arial;
-        text-align: right;
-        text-decoration: none;
+    .main-nav { 
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: row;
+        list-style-type: none;
+        li {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            padding: 10px;
+            text-decoration: none;
+            color: #754b23;
+        }
     }
     .main-icon {
-        text-align: center;
+        display:flex;
+        margin: 0px;
+        background-repeat: no-repeat; 
+        height: 192px;
+        width: 1000px;
         background-image: url("../images/logo.png");
+        background-position: center;      
     }
 
 }
@@ -40,9 +58,6 @@ header  {
     width: 39%;
 }
 
-.img {
-    box-align: center;
-}
 
 .longText {
     color:orangered;
@@ -145,10 +160,25 @@ footer {
     background-color: #06b4af;
     color: white;
     .dots {
-        top: 10%;
-        right: 20%;
-        background-image: url("../images/dots-footer.png")
-    }
+        
+        width: 33%;
+        height: 44px;
+        
+        background-repeat: no-repeat; 
+        background-image: url("../images/dots-footer.png");
+        background-position: center bottom;
+    };
+    .date {
+        width: 33%;
+        position: relative;
+        background-position: center bottom;
+
+    };
+    .phone {
+        width: 33%;
+        align-content: center;
+
+    };
 }
 
 footer > *{
