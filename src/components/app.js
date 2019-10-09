@@ -7,6 +7,7 @@ import Footer from './footer';
 import Header from './header';
 import Home from './home';
 import Services from './services';
+import Products from './products';
 
 const App = () => (
     <div className="app">
@@ -14,11 +15,13 @@ const App = () => (
             <div className="row">
                 <div className="col">
                     <Header />
-                    <Route path="/about" component={About} />
-                    <Route path="/contact" component={Contact} />
                     <Route path="/" exact component={Home} />
+                    <Route path="/products" component={Products} />
+
+                    <Route path="/about" component={About} />
                     <Route path="/services" component={Services} />
                     
+                    <Route path="/contact" component={Contact} />
                     <Footer />
                 </div>
             </div>
