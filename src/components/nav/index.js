@@ -5,20 +5,24 @@ import './nav.scss';
 export default props => {
     return (
         <ul className="main-nav">
-            <li>
+            <li className="nav-item nav-link active">
                 <Link to="/">Home</Link>
             </li>
-            <li>
-                <Link to="/products">Products</Link>
-            </li>
-            <li>
-                <Link to="/about">About Us</Link>
-            </li>
-            <li>
-                <Link to="/services">Services</Link>
-            </li>
-            <li>
-                <Link to="/contact">Contact</Link>
+            <li className="nav-item nav-link">
+               <Link className={`menuList link `}
+               to="/products">Products</Link>
+           </li>
+            <li className="nav-item nav-link">
+               <Link className={`menuList link `}
+               to="/about">About Us</Link>
+           </li>
+            <li className="nav-item nav-link">
+               <Link className={`menuList link `}
+               to="/services">Services</Link>
+           </li>
+            <li className="nav-item nav-link">
+               <Link className={`menuList link `}
+               to="/contact">Contact</Link>
             </li>
         </ul>
     );
