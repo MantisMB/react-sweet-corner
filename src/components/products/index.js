@@ -1,9 +1,10 @@
-import React from 'react';
-import './products.scss';
+import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { getAllProducts } from '../../actions';
+import { getAllProducts } from '../../actions/index.js';
+import './products.scss';
+import "bootstrap/dist/css/bootstrap.css";
 
-class Products extends React.Component {
+class Products extends Component {
     componentDidMount = () => {
         this.props.getAllProducts();
         console.log('Products Component Mounted')
@@ -11,7 +12,7 @@ class Products extends React.Component {
     render() {
         const { products } = this.props;
         const productElements = products.map(product => {
-            return <ProductItem key={product.id} {...product} goToDetails={() => this.goToDetails(product.id)} />;
+            console.log(products)
           });
         return (
         <div className='container products'>
@@ -26,12 +27,14 @@ function mapStateToProps(state){
     console.log('Products Component mapStateToProps state:', state);
     
     return {
-        products: state.products.list
+        products: state.products.list,
     };
 }
-
-export default connect(mapStateToProps, {
-    getAllProducts: getAllProducts
-})(Products);
-
-
+ 
+  export default connect(
+    mapStateToProps,
+    {
+      getAllProducts,
+      
+    },
+  )(Products);
