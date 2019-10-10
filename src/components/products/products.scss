@@ -47,7 +47,9 @@
         padding: 10px;
     }
     .btn:hover{
-        color: #754b23; 
+        color: #754b23;
+        border-color: #754b23;
+        border-style: inset;
     }
     .btn-quantity {
         font-size: 2em;
