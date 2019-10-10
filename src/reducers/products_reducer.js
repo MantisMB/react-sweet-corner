@@ -6,10 +6,23 @@ const DEFAULT_STATE = {
 };
 
 export default (state = DEFAULT_STATE, action) => {
-    switch(action.type){
-        case types.GET_ALL_PRODUCTS:
-            return { ...state, list: action.products };
-        default:
-            return state;
+    switch (action.type) {
+       case types.GET_ALL_PRODUCTS:
+          return {
+             ...state,
+             list: action.products,
+          };
+       case types.GET_PRODUCT_DETAILS:
+          return {
+             ...state,
+             details: action.products,
+          };
+       case types.CLEAR_PRODUCT_DETAILS:
+          return {
+             ...state,
+             details: null,
+          };
+       default:
+          return state;
     }
-}
+ };

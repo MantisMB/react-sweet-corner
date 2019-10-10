@@ -6,25 +6,19 @@ import './products.scss';
 import "bootstrap/dist/css/bootstrap.css";
 
 class Products extends Component {
-    componentDidMount = () => {
-        this.props.getAllProducts();
-        console.log('Products Component Mounted')
-     };
-     goToDetails(id){
+    goToDetails = id => {
         this.props.history.push(`/products/${id}`);
-
-    }
+      };
+    
+      componentDidMount = () => {
+        this.props.getAllProducts();
+      };
     render() {
         const { products } = this.props;
-        const productElements = products.map((product) => {
-            return (
-                <ProductItem 
-                    key={product.id}
-                    {...product} 
-                    goToDetails={this.goToDetails.bind(this, product.id)}
-                />
-            );
+        const productElements = products.map(product => {
+          return <ProductItem key={product.id} {...product} goToDetails={() => this.goToDetails(product.id)} />;
         });
+            
         return (
         <div className='container products'>
             <h1 className="m-4">Shop our cupcakes</h1>
@@ -39,6 +33,7 @@ function mapStateToProps(state){
     
     return {
         products: state.products.list,
+        
     };
 }
  

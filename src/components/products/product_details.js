@@ -1,16 +1,59 @@
-import React from 'react'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { getProductDetails, clearProductDetails } from '../../actions/index';
+import Money from '../general/money';
 import './products.scss';
 import "bootstrap/dist/css/bootstrap.css";
 
-const product_details = (props) => {
-    return (
-        <div className="row">
-            <div className="product-details">
-                <h1>Product Details</h1>
+class ProductDetails extends Component {
+    constructor(props) {
+        super(props);
+     }
+     state = {
+        quantity: 1,
+     };
+
+     componentDidMount(){
+        const { getProductDetails, match: { params } } = this.props;
+    
+        getProductDetails(params.product_id);
+    }
+
+     render() {
+        const { details } = this.props;
+        if (details == null) {
+           return <h1>Loading product</h1>;
+        }
+        return (
+            <div className="row">
+                <div className="product-details col">
+                    
+                    <img src={details.image.url} className='m-3 img-thumbnail'/>
+                </div>
+                <div className="product-details col">
+                    <h2 className="m-3">{details.name}</h2>
+                    <p className="m-3 caption">{details.caption}</p>
+                    <h3 className="m-3">Description</h3>
+                    <p className="m-3">{details.description}</p>
+                    <h2 className="m-3 float-right">
+                        <Money cost={details.cost} />
+                    </h2>
+                </div>
             </div>
-        </div>
-    );
+        )};
 
 }
 
-export default product_details;
+function mapStateToProps(state) {
+    return {
+       details: state.products.details,
+    };
+ }
+
+export default connect (
+    mapStateToProps,
+    {
+      getProductDetails, clearProductDetails,
+      
+    },
+) (ProductDetails);

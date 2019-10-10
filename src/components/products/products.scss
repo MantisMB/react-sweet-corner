@@ -18,4 +18,13 @@
 }
 .product-details {
     color: #754b23; 
+    margin: auto;
+    .caption {
+        font-family: Qwigley, cursive, sans-serif;
+        font-size: 2em;
+    }
+    img {
+        border-radius: 10px; 
+    }
 }
+
