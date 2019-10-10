@@ -36,15 +36,33 @@ class ProductDetails extends Component {
                     <img src={details.image.url} className='m-3 img-thumbnail'/>
                 </div>
                 <div className="product-details col">
-                    <h2 className="m-3">{details.name}</h2>
-                    <p className="m-3 caption">{details.caption}</p>
-                    <h3 className="m-3">Description</h3>
-                    <p className="m-3">{details.description}</p>
-                    <h2 className="m-3 float-right">
-                        <Money cost={details.cost} />
-                    </h2>
+                    <div className="row">
+                        <div className="col">
+                            <h2 className="m-3">{details.name}</h2>
+                            <p className="m-3 caption">{details.caption}</p>
+                            <h3 className="m-3">Description:</h3>
+                            <p className="m-3">{details.description}</p>
+                            <h2 className="m-3 float-right">
+                                Price: <Money cost={details.cost} />
+                            </h2>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="col">
+                            <h4 className="m-3">Quantity:</h4>
+                            <div className="row product-quantity mb-3 float-right">
+                                <div className="quantity-controls col">
+                                    <button className="btn btn-quantity">-</button>
+                                    <span className="quantity">1</span>
+                                    <button className="btn btn-quantity">+</button>
+                                </div>
+                                <button className="btn cart">Add To Cart</button>
+                            </div>
+                        </div> 
+                    </div>
                 </div>
             </div>
+            
         )};
 
 }
