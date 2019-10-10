@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getProductDetails, clearProductDetails } from '../../actions/index';
+import { clearProductDetails, getProductDetails } from '../../actions/';
 import Money from '../general/money';
 import './products.scss';
 import "bootstrap/dist/css/bootstrap.css";
@@ -17,6 +17,11 @@ class ProductDetails extends Component {
         const { getProductDetails, match: { params } } = this.props;
     
         getProductDetails(params.product_id);
+    }
+
+    componentWillUnmount(){
+        this.props.clearProductDetails();
+        // console.log('ProductDetails component about to unmount')
     }
 
      render() {
@@ -53,7 +58,8 @@ function mapStateToProps(state) {
 export default connect (
     mapStateToProps,
     {
-      getProductDetails, clearProductDetails,
+        clearProductDetails: clearProductDetails,
+        getProductDetails: getProductDetails,
       
-    },
+    }
 ) (ProductDetails);
