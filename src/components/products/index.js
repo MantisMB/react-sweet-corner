@@ -10,11 +10,21 @@ class Products extends Component {
         this.props.getAllProducts();
         console.log('Products Component Mounted')
      };
+     goToDetails(id){
+        this.props.history.push(`/products/${id}`);
+
+    }
     render() {
         const { products } = this.props;
         const productElements = products.map((product) => {
-            return <ProductItem key={product.id} {...product}/>
-          });
+            return (
+                <ProductItem 
+                    key={product.id}
+                    {...product} 
+                    goToDetails={this.goToDetails.bind(this, product.id)}
+                />
+            );
+        });
         return (
         <div className='container products'>
             <h1 className="m-4">Shop our cupcakes</h1>
