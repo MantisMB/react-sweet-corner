@@ -1,10 +1,10 @@
-@font-face {
-    font-family: rustic;
-    src: url('/assets/fonts/rustic.ttf');
-}
 
-body {
-    .rustic {
-        font-family: rustic;
+a {
+    color: #754b23 ;
+    text-decoration: none;
+    background-color: transparent;
+    &:hover{
+        color: sandybrown;
     }
-}
+
+};

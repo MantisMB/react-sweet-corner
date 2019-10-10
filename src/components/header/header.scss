@@ -1,5 +1,5 @@
 header {
-    width: 1000px;
+    width: 100%;
     font-size: 4vmin;
     font-family: Arial, Helvetica, sans-serif;
     border-bottom: 24px solid #754b23;
@@ -15,9 +15,11 @@ header {
     h2 {
         font-family: Qwigley, cursive, sans-serif;
         text-align: center;
+        color: #754b23;
     }
     .top-image {
         height: 100px;
+        width: 100%;
         background-image: url("../../assets/images/header.png");
         background-repeat: no-repeat;  
     }
