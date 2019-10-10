@@ -5,12 +5,12 @@ import CustomInput from './CustomInput'
 
 const Form = props => {
 
-    console.log(props)
+    // console.log(props)
 
     const handleFormSubmit = (formValues) => {
         // When your submit handler is called by redux form
         // you are passed all the form values
-        console.log('On Submit Simple Form Values:', formValues);
+        // console.log('On Submit Simple Form Values:', formValues);
     }
  
 

@@ -3,7 +3,7 @@ import React from 'react'
 const CustomInput = props => {
     const { autoComplete = 'off', input, meta, placeholder, className, type = 'text' } = props;
  
-    console.log(props)
+    // console.log(props)
 
     const hasError = meta.touched && meta.error;
 

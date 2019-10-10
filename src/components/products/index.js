@@ -29,7 +29,7 @@ class Products extends Component {
 }
 
 function mapStateToProps(state){
-    console.log('Products Component mapStateToProps state:', state);
+    // console.log('Products Component mapStateToProps state:', state);
     
     return {
         products: state.products.list,
