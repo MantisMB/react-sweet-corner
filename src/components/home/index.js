@@ -4,9 +4,8 @@ import dotsbox2 from '../../assets/images/dots-box2.png'
 
 export default props => {
     return (
-        <div className="container">
-            
-                <div className="row homediv1">
+            <div className="row">
+                <div className="homediv1">
                     <main className="col">
                         <h2 >
                             We cherish the sweet moments...
@@ -24,7 +23,7 @@ export default props => {
                             We can make happiness with so little!
                         </h2>
                         <p>
-                            We can provide services for Weddings, Bar & Bat Mitzvahs, Birthdays, Showers, Corporate Events, and any other special occasion!
+                            We can provide services for Weddings, Bar &amp; Bat Mitzvahs, Birthdays, Showers, Corporate Events, and any other special occasion!
                         </p>
                         <p>
                             Our expert bakers are waiting to create a memorable, unique cupcake bursting with freshness and flavor just for you.
@@ -39,14 +38,12 @@ export default props => {
                     </aside>
                 
             </div>
-            <div className="row">
                 <div className="homediv2">
                     <h1>
                         Please note you will be overwhelmed by the sweet content!
                     </h1>
                     <div className="cupcakes"></div>
                 </div>
-            </div>
         </div>
     );
 }

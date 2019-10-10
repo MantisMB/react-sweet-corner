@@ -17,8 +17,8 @@
         padding: 0px;
         ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
             color: #754b23;
-            vertical-align: top;
             opacity: 1; /* Firefox */
+            top: 0px;
           }
           
           :-ms-input-placeholder { /* Internet Explorer 10-11 */
@@ -91,12 +91,14 @@
                         text-indent: 3mm;
                     }
                     .message {
-                        width: 310px;
+                        min-width: 310px;
                         min-height: 115px;
+                        
                         background-color:#f6b53e;
                         border: 0px;
                         text-indent: 3mm;
                         resize:vertical;
+                        overflow: auto;
                     }
                     .btn-send {
                         margin-bottom: 5%;

@@ -2,9 +2,20 @@
     .product-item {
         text-align: center;
         color: #754b23;
+        
+    }
+    .product-item:hover {
+        background-color: #06b4af;
+        color: white;
+        border-radius: 10px;
+        cursor: pointer;
     }
     h1 {
         text-align:center;
         color: #754b23; 
     }
+    
+}
+.product-details {
+    color: #754b23; 
 }
