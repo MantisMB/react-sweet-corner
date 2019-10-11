@@ -10,11 +10,12 @@ class Cart extends Component {
     }
 
     render(){
+        // console.log('Cart Items:', this.props.cartItems);
         return (
             <div className="container">
                 <div className="row">
                     <div className="col cart">
-                        <h1 >Cart</h1>
+                        <h1>Cart</h1>
                     </div>
                 </div>
             </div>
@@ -22,6 +23,12 @@ class Cart extends Component {
     }
 }
 
-export default connect(null, {
+function mapStateToProps(state) {
+    return {
+       cartItems: state.cart.items,
+    };
+ }
+
+export default connect(mapStateToProps, {
     getActiveCart: getActiveCart
 })(Cart);
