@@ -55,6 +55,14 @@ export const getProductDetails = productId => async dispatch => {
         console.log('Add Item To Cart Error:', error.message);
 
     }
+};
+
+export const getActiveCart = () => async dispatch => {
+    try {
+        console.log('Get active cart action creator');
+    } catch(error){
+        console.log('Get active cart error:', error);
+    }
 }
 
 export const clearProductDetails = () => ({ type: types.CLEAR_PRODUCT_DETAILS });
