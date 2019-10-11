@@ -5,6 +5,8 @@ footer {
     width: 1000px;
     background-color: #06b4af;
     color: white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
     .dots {
         width: 33%;
         height: 44px;
@@ -21,10 +23,10 @@ footer {
         width: 33%;
         vertical-align: bottom;
         bottom: 0px;
-        margin-top: 33px;
+        margin-top: 40px;
     };
     .phone {
-        margin-top: 20px;
+        margin-top: 25px;
         margin-right: 10px;
         width: 33%;
         height: 20px;
