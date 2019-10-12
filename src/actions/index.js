@@ -4,28 +4,6 @@ import axios from 'axios';
 const BASE_URL = 'http://api.sc.lfzprototypes.com';
 
 
-
-function tokenCheck() {
-    const cartToken = localStorage.getItem("sc-cart-token");
-    const token = localStorage.getItem("token");
-    if (token) {
-      localStorage.removeItem("sc-cart-token")
-       return {
-          headers: {
-             Authorization: localStorage.getItem("token"),
-          },
-       };
-    } else if (cartToken) {
-       return {
-          headers: {
-             "X-Cart-Token": localStorage.getItem("sc-cart-token"),
-          },
-       };
-    } else {
-       return null;
-    }
- };
-
 export const getAllProducts = () => async dispatch => {
     try {
        const response = await axios.get(`${BASE_URL}/api/products`);
@@ -56,7 +34,13 @@ export const getProductDetails = productId => async dispatch => {
  export const addItemToCart = (productId, quantity) => async (dispatch) => {
     try {
         
-        const axiosConfig = tokenCheck();
+        const cartToken = localStorage.getItem('sc-cart-token');
+
+        const axiosConfig = {
+            headers: {
+                'X-Cart-Token': cartToken
+            }
+        }
         
         const resp = await axios.post(`${BASE_URL}/api/cart/items/${productId}`, {
             quantity: quantity,
@@ -125,5 +109,52 @@ export const getCartTotals = () => async dispatch => {
         console.log('Error getting cart totals:', err);
     }
  };
+
+ export const createGuestOrder = guest => async dispatch => {
+    try {
+        
+        const cartToken = localStorage.getItem('sc-cart-token');
+
+        const axiosConfig = {
+            headers: {
+                'x-cart-token': cartToken
+            }
+        }
+ 
+       const res = await axios.post(`${BASE_URL}/api/orders/guest`, guest, axiosConfig);
+ 
+       localStorage.removeItem("sc-cart-token");
+ 
+       dispatch({
+          type: types.CREATE_GUEST_ORDER,
+          order: {
+             id: res.data.id,
+             message: res.data.message,
+          },
+       });
+ 
+       return {
+          email: guest.email,
+          order_Id: res.data.id,
+       };
+    } catch (err) {
+       console.log("Error from Guess checkout", err);
+    }
+ };
+ 
+ export const getGuestOrderDetails = (email, orderId) => async dispatch => {
+    try {
+       const res = await axios.get(`http://api.sc.lfzprototypes.com/api/orders/guest/${orderId}?email=${email}`);
+ 
+       dispatch({
+          type: types.GET_GUEST_ORDER_DETAILS,
+          orderDetail: res,
+       });
+    } catch (err) {
+       console.log("getGuestOrderDetails", err);
+    }
+ };
+
+
 
  export const clearProductDetails = () => ({ type: types.CLEAR_PRODUCT_DETAILS });
