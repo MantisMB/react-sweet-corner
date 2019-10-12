@@ -21,7 +21,7 @@ class ProductDetails extends Component {
 
     componentWillUnmount(){
         this.props.clearProductDetails();
-        // console.log('ProductDetails component about to unmount')
+    // console.log('ProductDetails component about to unmount')
     }
 
     incrementQuantity = () => {
@@ -39,10 +39,13 @@ class ProductDetails extends Component {
         });
      };
 
-     handleAddToCart(){
+     async handleAddToCart(){
         const { id } = this.props.details;
         const { quantity } = this.state;
-        this.props.addItemToCart(id, quantity);
+
+        await this.props.addItemToCart(id, quantity);
+
+        this.props.history.push('/cart');
     
         // console.log(`Add ${quantity} items to cart, with product ID: ${id}`);
     }
