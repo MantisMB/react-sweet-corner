@@ -10,6 +10,7 @@ import Services from './services';
 import Products from './products';
 import ProductDetails from './products/product_details';
 import Cart from './cart';
+import GuestCheckout from './checkout/guest_checkout'
 
 const App = () => (
     <div className="app">
@@ -22,9 +23,9 @@ const App = () => (
                     <Route path="/cart" component={Cart} />
                     <Route path="/about" component={About} />
                     <Route path="/services" component={Services} />
-                    
                     <Route path="/contact" component={Contact} />
                     <Route path="/products/:product_id" component={ProductDetails} />
+                    <Route path="/checkout/guest" component={GuestCheckout} />
                     <Footer />
                 </div>
             </div>

@@ -9,23 +9,23 @@ export default props => {
         <nav className="navbar float-right">
             <ul className="main-nav">
                 <li className="nav-item nav-link active">
-                    <Link to="/">Home</Link>
+                    <Link className={`menuList link `} to="/">HOME</Link>
                 </li>
                 <li className="nav-item nav-link">
                 <Link className={`menuList link `}
-                to="/products">Products</Link>
+                to="/products">PRODUCTS</Link>
             </li>
                 <li className="nav-item nav-link">
                 <Link className={`menuList link `}
-                to="/about">About Us</Link>
+                to="/about">ABOUT US</Link>
             </li>
                 <li className="nav-item nav-link">
                 <Link className={`menuList link `}
-                to="/services">Services</Link>
+                to="/services">SERVICES</Link>
             </li>
                 <li className="nav-item nav-link">
                 <Link className={`menuList link `}
-                to="/contact">Contact</Link>
+                to="/contact">CONTACT</Link>
                 </li>
                 <CartWidget />
             </ul>
