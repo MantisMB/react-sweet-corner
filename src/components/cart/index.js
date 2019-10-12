@@ -10,7 +10,7 @@ class Cart extends Component {
     }
 
     render(){
-        // console.log('Cart Items:', this.props.cartItems);
+        console.log('Cart Items:', this.props.cartItems);
         return (
             <div className="container">
                 <div className="row">

@@ -44,7 +44,7 @@ class ProductDetails extends Component {
         const { quantity } = this.state;
         this.props.addItemToCart(id, quantity);
     
-        console.log(`Add ${quantity} items to cart, with product ID: ${id}`);
+        // console.log(`Add ${quantity} items to cart, with product ID: ${id}`);
     }
 
      render() {
