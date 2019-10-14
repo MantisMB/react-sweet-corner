@@ -56,7 +56,7 @@ export const getProductDetails = productId => async dispatch => {
          });
         //  console.log('Add to cart response:', resp);
     } catch(error){
-        console.log('Add Item To Cart Error:', error.message);
+      //   console.log('Add Item To Cart Error:', error.message);
 
     }
 };
@@ -83,7 +83,7 @@ export const getActiveCart = () => async dispatch => {
         // console.log('Get active cart server response:', resp);
         // console.log('Get active cart action creator');
     } catch(err){
-        console.log('Get active cart error:', err);
+      //   console.log('Get active cart error:', err);
     }
 }
 
@@ -104,9 +104,9 @@ export const getCartTotals = () => async dispatch => {
           type: types.GET_CART_TOTALS,
           total: resp.data,
        });
-    console.log('Get Totals Response:', resp);
+   //  console.log('Get Totals Response:', resp);
     } catch (err) {
-        console.log('Error getting cart totals:', err);
+      //   console.log('Error getting cart totals:', err);
     }
  };
 
@@ -138,13 +138,13 @@ export const getCartTotals = () => async dispatch => {
           order_Id: res.data.id,
        };
     } catch (err) {
-       console.log("Error from Guess checkout", err);
+       console.log("Error from Guest checkout", err);
     }
  };
  
  export const getGuestOrderDetails = (email, orderId) => async dispatch => {
     try {
-       const res = await axios.get(`http://api.sc.lfzprototypes.com/api/orders/guest/${orderId}?email=${email}`);
+       const res = await axios.get(`${BASE_URL}/api/orders/guest/${orderId}?email=${email}`);
  
        dispatch({
           type: types.GET_GUEST_ORDER_DETAILS,

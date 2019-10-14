@@ -16,7 +16,7 @@ class CartWidget extends Component {
       if(cartTotal){
         itemCount = cartTotal.items
       }
-      console.log('Cart Widget Props:', this.props.cartTotal);
+      // console.log('Cart Widget Props:', this.props.cartTotal);
       return (
             <li className="menuList nav-item nav-link">
               <Link to="/cart" className="link">
