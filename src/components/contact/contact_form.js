@@ -32,6 +32,7 @@ const Form = props => {
                                 className="name"
                                 placeholder="Name"
                                 component={CustomInput} 
+                                required
                             />
                         </div>
                         <div className="input-field">
@@ -41,6 +42,7 @@ const Form = props => {
                                 placeholder="Email" 
                                 component={CustomInput} 
                                 autoComplete="email" 
+                                required
                             />
                         </div>
                         <div className="input-field">
@@ -50,7 +52,8 @@ const Form = props => {
                                 placeholder="Phone"
                                 component={CustomInput} 
                                 type="phone" 
-                                autoComplete="phone" 
+                                autoComplete="phone"
+                                required 
                             />
                         </div>
                         <div className="input-field">
@@ -60,7 +63,8 @@ const Form = props => {
                                 placeholder="Subject"
                                 component={CustomInput} 
                                 type="subject" 
-                                autoComplete="subject" 
+                                autoComplete="subject"
+                                required 
                                 />
                         </div>
                         <div className="input-field">
