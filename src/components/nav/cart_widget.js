@@ -12,6 +12,7 @@ class CartWidget extends Component {
   
     render() {
       const {cartTotal} = this.props;
+      
       let itemCount = 0;
       if(cartTotal){
         itemCount = cartTotal.items
@@ -19,9 +20,9 @@ class CartWidget extends Component {
       // console.log('Cart Widget Props:', this.props.cartTotal);
       return (
             <li className="menuList nav-item nav-link">
-              <Link to="/cart" className="link">
+              <Link to="/cart" className="link" title="Shopping Cart" >
                 <i className="material-icons">shopping_cart</i>
-                <span className="cart-item-count align-middle">{itemCount==0 ? null:itemCount}</span>
+                <span className="cart-item-count align-middle">{itemCount === 0 ? "0" : itemCount}</span>
             </Link>
             </li>
       )

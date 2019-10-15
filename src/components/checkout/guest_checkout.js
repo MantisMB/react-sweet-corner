@@ -10,10 +10,11 @@ class GuestCheckout extends Component {
     handleGuestCheckout = async guest =>{
 
         const orderInfo = await this.props.createGuestOrder(guest);
-        console.log("orderInfo: ", orderInfo); 
+        
         const redirectUrl = `/orders/guest/${orderInfo.order_Id}?email=${orderInfo.email}`;
         this.props.history.push(redirectUrl)
-    
+        // console.log("Guest Info: ", guest); 
+        console.log("Order Info: ", orderInfo); 
         setTimeout(() => {
           this.props.reset();
         }, 1500);

@@ -15,7 +15,7 @@ class Cart extends Component {
         const { cartItems, total } = this.props;
         const token = localStorage.getItem("token");
         if (cartItems == null) return false;
-        console.log('Cart Items:', this.props.cartItems);
+        // console.log('Cart Items:', this.props.cartItems);
         return (
             <div className="container">
                 <div className="row">
