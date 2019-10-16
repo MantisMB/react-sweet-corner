@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Field,reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 import { createGuestOrder, getGuestOrderDetails } from '../../actions/index'
 import './checkout.scss';
@@ -14,7 +14,7 @@ class GuestCheckout extends Component {
         const redirectUrl = `/orders/guest/${orderInfo.order_Id}?email=${orderInfo.email}`;
         this.props.history.push(redirectUrl)
         // console.log("Guest Info: ", guest); 
-        console.log("Order Info: ", orderInfo); 
+        // console.log("Order Info: ", orderInfo); 
         setTimeout(() => {
           this.props.reset();
         }, 1500);
