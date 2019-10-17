@@ -5,11 +5,13 @@ const DEFAULT_STATE={
 }
 
 export default (state = DEFAULT_STATE,action)=>{
+    // console.log("action", action)
     switch(action.type){
       case types.GET_GUEST_ORDER_DETAILS:
         return{
           ...state,
-          details: action.orderDetails
+          details: action.details
+          
         }
         default:
           return{
