@@ -132,7 +132,7 @@ export const getCartTotals = () => async dispatch => {
             message: res.data.message,
          },
       });
-      console.log('Guest Checkout Response:', res);
+      // console.log('Guest Checkout Response:', res);
       return {
           email: guest.email,
           order_Id: res.data.id,
@@ -151,8 +151,9 @@ export const getCartTotals = () => async dispatch => {
       
       dispatch({
          type: types.GET_GUEST_ORDER_DETAILS,
-         orderDetail: res,
+         details: res.data,
       });
+      console.log('OrderDetail actions.js get:', res.data)
     } catch (err) {
       console.log('Error with guest details:', err);
     }

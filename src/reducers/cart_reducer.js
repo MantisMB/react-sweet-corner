@@ -4,6 +4,7 @@ const DEFAULT_STATE = {
     cartId: null,
     items: null,
     total: null,
+    details: null,
 };
 
 export default (state = DEFAULT_STATE, action) => {
